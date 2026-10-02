@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BookingTest {
+    
     @Test
     void constructorStoresDetailsAndStartsActive() {
         Vehicle vehicle = new Vehicle(1, VehicleType.CAR, 50.0);
@@ -38,32 +39,39 @@ class BookingTest {
     }
 
 
-// @Test
-// void cancellingACompletedBooking() {
-//     Booking booking = createBooking();
-//     booking.completeBooking(); 
-    
-//     booking.cancelBooking();
-//     assertEquals(BookingStatus.COMPLETED, booking.getBookingStatus(), // ভ্যারিফাই ছাড়া ক্যান্সেল করলে বাগ !
-//                  "System allowed a COMPLETED booking to be CANCELLED");
-// }
-// // Intentional Bug//
+@Test
+    void toStringContainsAllRelevantInformation() {
+        Booking booking = createBooking();
+        String result = booking.toString();
+        assertTrue(result.contains("bookingId="));
+        assertTrue(result.contains("amount="));
+        assertTrue(result.contains("bookingStatus="));
+        assertTrue(result.contains("startTime="));
+        assertTrue(result.contains("endTime="));
+        assertTrue(result.contains("vehicle="));
+        assertTrue(result.contains("parkingSlot="));
+    }
+    // @Test
+    // void cancellingACompletedBooking() {
+    //     Booking booking = createBooking();
+    //     booking.completeBooking(); 
+        
+    //     booking.cancelBooking();
+    //     assertEquals(BookingStatus.COMPLETED, booking.getBookingStatus(), // ভ্যারিফাই ছাড়া ক্যান্সেল করলে বাগ !
+    //                  "System allowed a COMPLETED booking to be CANCELLED");
+    // }
+    // // Intentional Bug//
 
-// @Test
-// void bookingWithEqualStartAndEndTimeThrowsException() {
-//     Vehicle vehicle = new Vehicle(1, VehicleType.CAR, 50.0);
-//     ParkingSlot slot = new ParkingSlot("R1", ParkingSlotType.REGULAR);
-//     LocalDateTime time = LocalDateTime.of(2026, 5, 1, 10, 0);
-//     assertThrows(IllegalBookingTimeException.class, () -> {
-//         new Booking(1, vehicle, slot, time, time, 10.0); //এখানে শুরু এর শেষ টাইম একই 
-//     });
-// }
-
-
-// // Intentional Bug//
-
-
-
+    // @Test
+    // void bookingWithEqualStartAndEndTimeThrowsException() {
+    //     Vehicle vehicle = new Vehicle(1, VehicleType.CAR, 50.0);
+    //     ParkingSlot slot = new ParkingSlot("R1", ParkingSlotType.REGULAR);
+    //     LocalDateTime time = LocalDateTime.of(2026, 5, 1, 10, 0);
+    //     assertThrows(IllegalBookingTimeException.class, () -> {
+    //         new Booking(1, vehicle, slot, time, time, 10.0); //এখানে শুরু এর শেষ টাইম একই 
+    //     });
+    // }
+    // // Intentional Bug//
 
     private Booking createBooking() {
         LocalDateTime start = LocalDateTime.of(2026, 5, 1, 10, 0);
