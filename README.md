@@ -85,7 +85,8 @@ pit-reports/
 
 ---
 
-
+## Report Requirements (`011223445_011223446_unit_test_report.md`)
+> **DO NOT WRITE YOUR REPORT USING AI.** You may use AI tools to check grammar, spelling, or formatting, but **all content must be your own work**. Any violation will result in a score of 0 for the assignment. Share your AI conversations(prompts) if you used it to correct grammar or spelling or formatting.
 
 
 ### 0) Team members
@@ -128,6 +129,12 @@ List **each discovered defect** with a suggested fix:
 **Setting up the project:** You may set up your own Maven/Gradle project and PIT configuration if you're comfortable doing so. If you'd rather not deal with the setup, a working boilerplate will be shared separately — you can just write your tests inside it. Either way, your final submission must produce a mutation report when `mvn org.pitest:pitest-maven:mutationCoverage` (or your Gradle equivalent) is run.
 
 ---
+
+## Academic Integrity
+
+* **Any use of AI tools (ChatGPT, Claude, Copilot, or similar) at any stage of this assignment — writing tests, writing the report, drafting explanations, or anything else — is strictly prohibited and will be penalized, even if disclosed.** This applies to every part of the submission, including the report.
+* **Any other form of unfair means** (plagiarism, sharing code between teams, etc.) is also strictly prohibited.
+* **Penalty:** score **0** on this assignment **and** deduction from other assessments.
 
 ---
 
